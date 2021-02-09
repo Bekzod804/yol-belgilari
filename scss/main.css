@@ -292,8 +292,12 @@ body {
   display: none;
 }
 
+.kim1 div {
+  border: 5px solid transparent;
+}
+
 .border {
-  border: 3px solid #fb0808 !important;
+  border: 5px solid #fb0808 !important;
 }
 
 .img {
