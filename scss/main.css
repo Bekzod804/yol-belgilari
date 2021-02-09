@@ -279,7 +279,6 @@ body {
 }
 
 .exit {
-  padding: 15px 30px !important;
   z-index: 500;
   background-color: #050505 !important;
   color: #fff;

@@ -150,7 +150,7 @@ btnStart.addEventListener("click", function (evt) {
   matn.style.color = "#ffffff";
   matn.style.fontSize = "25px";
   matn.style.boxShadow = " 0 0 20px #000000"
-  matn.style.padding = "5px 38px";
+  matn.style.padding = "5px 20px";
   matn.style.position = "fixed";
   matn.style.top = "-144px";
   matn.style.right = "20px";
