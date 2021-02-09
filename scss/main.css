@@ -141,7 +141,7 @@ body {
 
 .block__link .exit {
   position: fixed;
-  top: -7%;
+  top: -20%;
   right: 3.5%;
   display: none;
   background-color: transparent;

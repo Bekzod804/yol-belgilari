@@ -152,7 +152,7 @@ btnStart.addEventListener("click", function (evt) {
   matn.style.boxShadow = " 0 0 20px #000000"
   matn.style.padding = "11px 38px";
   matn.style.position = "fixed";
-  matn.style.top = "-80px";
+  matn.style.top = "-144px";
   matn.style.right = "20px";
   closeBtn.style.left = "20px";
   matn.style.borderRadius = "5px"
