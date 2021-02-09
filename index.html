@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./libs/bootstrap.min.css">
+  <link rel="stylesheet" href="./scss/main.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="select-wrapper">
+
+    <select class="select" name="select" id="select">
+      <option class="select__option" selected value="rus">Ruscha</option>
+      <option class="select__option" value="english">English</option>
+      <option class="select__option" value="ozbek">Ozbek</option>
+    </select>
+    <svg enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512"
+      xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
+      <path
+        d="m5.5 7.832v-2.332c0-1.654 1.346-3 3-3s3 1.346 3 3v2c.104 0 .202.024.304.034.736-.801 1.196-1.86 1.196-3.034 0-2.485-2.015-4.5-4.5-4.5s-4.5 2.015-4.5 4.5c0 1.328.586 2.508 1.5 3.332z" />
+      <path
+        d="m19 11c-.828 0-1.5.672-1.5 1.5v.25c0 .138-.112.25-.25.25s-.25-.112-.25-.25v-1.25c0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5v1.25c0 .138-.112.25-.25.25s-.25-.112-.25-.25v-2.25c0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5v2.25c0 .138-.112.25-.25.25s-.25-.112-.25-.25v-7.25c0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5v9c-.276 0-.5-.224-.5-.5v-2h-.494c-1.645 0-3.007 1.328-3.006 2.973.005 5.281 3.849 9.027 6.213 9.027h6.287c2.761 0 5-2.239 5-5v-6.5c0-.828-.672-1.5-1.5-1.5z"
+        fill="#ffffff" />
+    </svg>
+  </div>
+  <div class="sayhi">
+    <h1 class="sayhi__title">Xush kelibsiz</h1>
+  </div>
+  <div class="block">
+    <a class="block__link " href="./main.html" target="_blank" data-id="1">Individualniy
+      <form class="form " method="POST">
+        <div class="form__div">
+          <label class="form__label" for="level-select">Murakkablik</label>
+          <select class="level-select form__select" name="level" id="level-select" required>
+            <option value="bek" selected disabled>Tanlang</option>
+            <option class="option" value="oson">Osonroq</option>
+            <option class="option" value="ortacha">Ortacha</option>
+            <option class="option" value="qiyin">Qiyinroq</option>
+          </select>
+          <label class="form__label" for="level-select">Vaqtni tanlang</label>
+          <select class="time-select form__select" name="level1" id="level-select" required>
+            <option class="option" value="ikki">2 daqiqa</option>
+            <option class="option" value="uch">3.5 daqiqa</option>
+            <option class="option" value="besh">5 daqiqa</option>
+          </select>
+          <button class="btn btn-outline">Start</button>
+        </div>
+      </form>
+
+
+      <button class="btn exit">Exit</button>
+    </a>
+    <a class="block__link" href="#" data-id="2">Jamoaviy</a>
+    <a class="block__link" href="#" data-id="3">Qoshilish</a>
+
+    <template class="template">
+      <div class="div">
+        <h2 class="title">Toxtash taqiqlanadi</h2>
+        <img class="sign img" src="./images/signs/aholi_punkti.gif" alt="sign" width="180" height="180">
+      </div>
+    </template>
+  </div>
+  <div class="signs">
+    <div class="template-div">
+      <input type="text" class="from-control">
+
+    </div>
+  </div>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/array.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
