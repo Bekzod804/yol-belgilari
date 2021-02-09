@@ -178,7 +178,7 @@ btnStart.addEventListener("click", function (evt) {
         tugma.style.fontSize = "25px"
         tugma.textContent = "close";
         tugma.style.position = "fixed";
-        tugma.style.top = "77%";
+        tugma.style.top = "80%";
         tugma.style.zIndex = "1000"
         tugma.style.left = "47%";
         tugma.style.padding = "10px 20px"
