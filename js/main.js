@@ -21,9 +21,9 @@ blockElement.addEventListener("click", function (evt) {
 })
 var templateDiv = document.querySelector(".template-div");
 var templateElement = document.querySelector(".template").content;
-var bek = signsArray.slice(0, 20);
-var bek1 = signsArray.slice(0, 40);
-var bek2 = signsArray.slice(0, 80);
+var bek = signsArray.slice(0,20);
+var bek1 = signsArray.slice(0,40);
+var bek2 = signsArray.slice(0,80);
 var levelSelect = document.querySelector(".level-select");
 var timeSelect = document.querySelector(".time-select");
 var btnStart = document.querySelector(".btn-outline");
@@ -39,6 +39,7 @@ function getRandomInt(max) {
 }
 
 var createInput = document.createElement("input");
+createInput.readOnly = true;
 levelSelect.addEventListener("change", function () {
   excuting2()
   if (this.value == "oson") {
@@ -63,7 +64,7 @@ levelSelect.addEventListener("change", function () {
         alik = bek[salom];
         createInput.value = bek[salom].title;
         createInput.style.textAlign = "center"
-      }, 6000);
+      }, 3000);
     }
     creating(signsArray)
   }
@@ -89,7 +90,7 @@ levelSelect.addEventListener("change", function () {
         alik = bek1[salom1];
         createInput.value = bek[salom1].title;
         createInput.style.textAlign = "center"
-      }, 6000);
+      }, 3000);
     }
     creating(signsArray)
   }
@@ -121,22 +122,71 @@ levelSelect.addEventListener("change", function () {
 })
 var creteDiv = document.createElement("div");
 var closeBtn = document.querySelector(".exit");
+var TimeInterval = function (salom) {
+    setInterval((salom) => {
+      var tugma = document.createElement("button");
+      tugma.classList = "btn btn-success";
+      tugma.style.boxShadow = " 0 0 20px rgb(6, 59, 1)";
+      tugma.style.fontSize = "25px"
+      tugma.textContent = "close";
+      tugma.style.position = "fixed";
+      tugma.style.top = "82%";
+      tugma.style.zIndex = "1000"
+      tugma.style.left = "47%";
+      tugma.style.padding = "10px 20px"
+      body.innerHTML = "";
+      tugma.addEventListener("click", function () {
+        window.location.href = "./index.html";
+      })
+      body.append(creteDiv, tugma);
+    },
+    salom);
+
+}
 
 templateDiv.addEventListener("click", function (evt) {
+
   if (evt.target.matches(".div")) {
     if (evt.target.firstElementChild.textContent == createInput.value) {
       evt.target.classList.add("salom");
       evt.target.style.visibility = "hidden"
       var some = bek.findIndex(item => item == alik);
-      var bekzod = bek.splice(some1, 1);
+      var bekzod = bek.splice(some, 1);
       var some1 = bek1.findIndex(item => item == alik1);
       var bekzod1 = bek1.splice(some1, 1);
+      var some2 = bek2.findIndex(item => item == alik2);
+      var bekzod2 = bek2.splice(some2,1);
+
+
+       if (bek1.length === 0) {
+         creteDiv.textContent = "Tabriklaymiz siz golib boldingiz.Siz exit tugmasini bosish orqali orqaga qaytib qiyinroq bosqichni tanlashingiz mumkin";
+         clearInterval(TimeInterval);
+       } else {
+         creteDiv.textContent = "Uzr siz keyingi bosqichga ota olmadingiz.Siz oyinni yangidan boshlashingiz mumkin.Buning uchun close tugmasini bosing";
+       }
+       if (bek2.length === 0) {
+         creteDiv.textContent = "Tabriklaymiz siz golib boldingiz.Siz exit tugmasini bosish orqali orqaga qaytib qiyinroq bosqichni tanlashingiz mumkin";
+         clearInterval(TimeInterval);
+
+       } else {
+         creteDiv.textContent = "Uzr siz keyingi bosqichga ota olmadingiz.Siz oyinni yangidan boshlashingiz mumkin.Buning uchun close tugmasini bosing";
+       }
+
     }
     if (evt.target.firstElementChild.textContent != createInput.value) {
       evt.target.classList.add("border")
     }
+     TimeInterval(70000);
+    if (bek.length == 0) {
+      creteDiv.textContent = "Tabriklaymiz siz golib boldingiz.Siz close tugmasini bosish orqali orqaga qaytib qiyinroq bosqichni tanlashingiz mumkin";
+      clearInterval(TimeInterval);
+
+    } else {
+      creteDiv.textContent = "Uzr siz keyingi bosqichga ota olmadingiz.Siz oyinni yangidan boshlashingiz mumkin.Buning uchun close tugmasini bosing";
+    }
   }
 })
+
 
 var body = document.querySelector("body");
 var matn = document.createElement("div");
@@ -169,50 +219,10 @@ btnStart.addEventListener("click", function (evt) {
   var formElement = form.querySelector(".form__div");
   formElement.style.height = "0";
   creteDiv.classList.add("new");
-  var TimeInterval = function (salom) {
-    var TimeInterval = setInterval((salom) => {
-        var tugma = document.createElement("button");
-        tugma.classList = "btn ";
-        tugma.style.backgroundColor = "rgb(19, 196, 3)";
-        tugma.style.boxShadow = " 0 0 20px rgb(6, 59, 1)";
-        tugma.style.fontSize = "25px"
-        tugma.textContent = "close";
-        tugma.style.position = "fixed";
-        tugma.style.top = "80%";
-        tugma.style.zIndex = "1000"
-        tugma.style.left = "47%";
-        tugma.style.padding = "10px 20px"
-        body.innerHTML = "";
-        tugma.addEventListener("click", function () {
-          window.location.href = "./index.html";
-        })
-        body.append(creteDiv, tugma);
-        if (bek.length >= -1) {
-          creteDiv.textContent = "Uzr siz keyingi bosqichga ota olmadingiz.Siz oyinni yangidan boshlashingiz mumkin.Buning uchun close tugmasini bosing";
 
-        } else {
-          creteDiv.textContent = "Tabriklaymiz siz golib boldingiz.Siz exit tugmasini bosish orqali orqaga qaytib qiyinroq bosqichni tanlashingiz mumkin";
-        }
-        if (bek1.length >= -1) {
-          creteDiv.textContent = "Uzr siz keyingi bosqichga ota olmadingiz.Siz oyinni yangidan boshlashingiz mumkin.Buning uchun close tugmasini bosing";
-
-        } else {
-          creteDiv.textContent = "Tabriklaymiz siz golib boldingiz.Siz exit tugmasini bosish orqali orqaga qaytib qiyinroq bosqichni tanlashingiz mumkin";
-        }
-        if (bek2.length >= -1) {
-          creteDiv.textContent = "Uzr siz keyingi bosqichga ota olmadingiz.Siz oyinni yangidan boshlashingiz mumkin.Buning uchun close tugmasini bosing";
-
-        } else {
-          creteDiv.textContent = "Tabriklaymiz siz golib boldingiz.Siz exit tugmasini bosish orqali orqaga qaytib qiyinroq bosqichni tanlashingiz mumkin";
-        }
-
-      },
-
-      salom);
-  }
   var calling = function () {
     if (timeSelect.value == "ikki") {
-      TimeInterval(100000)
+      TimeInterval(10000)
     }
 
   }
